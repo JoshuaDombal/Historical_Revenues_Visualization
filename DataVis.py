@@ -33,17 +33,25 @@ plt.show()
 
 ################################################################################
 
-
-#sns.boxplot(x="Fiscal Year", y="Amount", data=dataframe)
-#plt.show()
-
-
-# Shows Sum of Categories
-# Helps show which category had the most revenue overall
-b = sns.barplot(x="Category", y="Amount", data=dataframe)
+# Shows the sum of revenue throughout the years for each "Source"
+b = sns.barplot(x="Source", y="Amount", data=dataframe)
+for item in b.get_xticklabels():
+    item.set_rotation(90)
 plt.show()
 
 
+
+# Shows Sum of Categories
+# Helps show which category had the most revenue overall (Major, minor, transfers & loans)
+c = sns.barplot(x="Category", y="Amount", data=dataframe)
+plt.show()
+
+
+
+
+
+#sns.boxplot(x="Fiscal Year", y="Amount", data=dataframe)
+#plt.show()
 
 
 #print(data.head())
